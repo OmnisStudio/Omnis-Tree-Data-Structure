@@ -1,7 +1,7 @@
 {
 	"classtype": "kObjectclass",
 	"omnisversion": "10.22",
-	"internalversion": 17,
+	"internalversion": 19,
 	"superclass": "TreeDataStructure.TreeNode",
 	"designtaskname": "Startup_Task",
 	"cvardefs": [
@@ -59,7 +59,7 @@
 		"editordata": "",
 		"external": true,
 		"issupercomponent": false,
-		"moddate": "2022-08-17 18:13:19",
+		"moddate": "2022-08-22 17:07:24",
 		"selfcontained": false,
 		"showascheckedout": false,
 		"userinfo": "",
