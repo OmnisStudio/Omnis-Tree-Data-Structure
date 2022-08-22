@@ -1,0 +1,87 @@
+[
+	{
+		"name": "$construct",
+		"order": 4,
+		"pvardefs": [
+			{
+				"name": "pID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pPrice",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 3,
+				"initval": "0"
+			},
+			{
+				"name": "pQuantity",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 4,
+				"initval": "0"
+			},
+			{
+				"name": "pParent",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 5,
+				"initval": "#NULL"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$toJSON",
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lJSON",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$fromJSON",
+		"order": 6,
+		"pvardefs": [
+			{
+				"name": "pJSON",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	}
+]

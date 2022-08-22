@@ -1,0 +1,23 @@
+Do lJSON.$setjson("",pJSONText)
+
+
+If not(lJSON.$hasmember("","id"))
+	Calculate pErrorText as "JSON data must have an 'id' member on the root object"
+	Quit method kFalse
+End If
+
+Calculate lRootID as lJSON.$getstring("id")
+Calculate rootNode as $objects.TreeNode.$newref(lRootID,lRootID)
+
+Calculate lChildCount as lJSON.$getarraylength("childNodes")
+
+Calculate lChildJSON as $extobjects.OJSON.$objects.JSON.$newref()
+
+For i from 0 to lChildCount-1 step 1
+	Do lChildJSON.$setjson("",lJSON.$getjson(con("childNodes.[",i,"]")))
+	Calculate lChildNodeType as lChildJSON.$getstring("nodeType")
+	Calculate lChildNode as $objects.[lChildNodeType].$newref("","")
+	Do lChildNode.$fromJSON(lChildJSON,$clib)
+	
+	Do rootNode.$appendChildNode(lChildNode)
+End For

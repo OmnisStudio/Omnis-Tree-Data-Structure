@@ -1,0 +1,7 @@
+If pSuccess
+	Quit method
+End If
+
+Breakpoint
+Calculate iFailureCount as iFailureCount+1
+OK message Assertion Failed {[pErrorText]}

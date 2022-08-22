@@ -1,0 +1,27 @@
+Do lTree.$insert("produce","Produce") Returns lProduceNode
+
+Do $objects.GroupNode.$newref("fruit","Fruit") Returns lNode ## Create a 'fruit' GroupNode
+Do lProduceNode.$appendChildNode(lNode) Returns lFruitNode ## Then add it to the 'produce' node.
+
+Do $objects.GroupNode.$newref("veg","Vegetables") Returns lNode ## Create a 'veg' GroupNode
+Do lProduceNode.$appendChildNode(lNode) ## Then add it to the 'produce' node.
+
+
+Do $objects.ProduceNode.$newref("apple","Apple",55,12) Returns lNode ## Create an 'apple' ProduceNode, with price & quantity
+Do lFruitNode.$appendChildNode(lNode) ## Then add it to the 'fruit' node.
+
+Do lFruitNode.$appendChildNode($objects.ProduceNode.$newref("banana","Banana",44,115))
+Do lFruitNode.$appendChildNode($objects.ProduceNode.$newref("orange","Orange",70,33))
+
+Do lTree.$breadthFirstSearchByID("banana") Returns lNode
+Do $cinst.$assert(lNode.id="banana","Banana node was not added")
+
+
+Do lTree.$toJSON() Returns lJSONText
+Do lTree.$clear()
+Do lTree.$toJSON() Returns #S1
+
+Do lTree.$fromJSON(lJSONText)
+Do lTree.$toJSON() Returns #S1
+
+Do $cinst.$assert(#S1=lJSONText,"Export/Import to JSON failed")

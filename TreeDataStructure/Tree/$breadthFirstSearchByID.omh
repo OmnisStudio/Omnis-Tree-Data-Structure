@@ -1,0 +1,25 @@
+Do lQueue.$define()
+Do lQueue.$cols.$add("node",kObjectref)
+
+Do lQueue.$add(pFromNode)
+
+
+While lQueue.$linecount
+	# 'pop' the top Node off the queue:
+	Calculate lNode as lQueue.1.node
+	Do lQueue.$remove(1)
+	
+	
+	If lNode.id=pTargetID
+		Quit method lNode
+	End If
+	
+	# Add any children of this node to our queue:
+	For lNode.childNodes.$line from 1 to lNode.childNodes.$linecount step 1
+		Do lQueue.$add(lNode.childNodes.childNode)
+	End For
+	
+End While
+
+
+Quit method #NULL

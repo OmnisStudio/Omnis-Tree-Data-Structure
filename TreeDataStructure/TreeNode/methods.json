@@ -1,0 +1,192 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+			{
+				"name": "pID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pValue",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pParent",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 3,
+				"initval": "#NULL"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$isLeaf",
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$appendChildNode",
+		"order": 4,
+		"pvardefs": [
+			{
+				"name": "pChildNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$appendChild",
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pChildID",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pChildValue",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lNewNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$toJSON",
+		"order": 6,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lEmptyArray",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lEmptyObj",
+				"order": 3,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lJSON",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$fromJSON",
+		"order": 7,
+		"pvardefs": [
+			{
+				"name": "pJSON",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "i",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lChildCount",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lChildJSON",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0
+			},
+			{
+				"name": "lChildNode",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lChildNodeType",
+				"order": 6,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lNodeLib",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	}
+]

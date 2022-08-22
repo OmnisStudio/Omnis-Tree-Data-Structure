@@ -1,0 +1,1 @@
+Calculate rootNode as $objects.TreeNode.$newref(pRootID,pRootValue)

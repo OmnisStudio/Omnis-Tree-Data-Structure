@@ -1,0 +1,140 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$runTests",
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$simpleTreeTest",
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lJSONText",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lNewNode",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "TreeDataStructure.TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lNode",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "TreeDataStructure.TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lTree",
+				"order": 1,
+				"type": "kObject",
+				"subtype": "TreeDataStructure.Tree",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$customNodeClasses",
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lFruitNode",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "GroupNode",
+				"sublen": 0
+			},
+			{
+				"name": "lJSONText",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lNode",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "TreeDataStructure.TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lProduceNode",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "TreeDataStructure.TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lTree",
+				"order": 1,
+				"type": "kObject",
+				"subtype": "TreeDataStructure.Tree",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$assert",
+		"order": 6,
+		"pvardefs": [
+			{
+				"name": "pSuccess",
+				"order": 1,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pErrorText",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2,
+				"initval": "\"Assertion failed\""
+			}
+		],
+		"lvardefs": [
+
+		]
+	}
+]

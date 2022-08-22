@@ -1,0 +1,4 @@
+# cChildNodesKey & cValueKey are overridden to customize this class.
+# We also changed the name of the second parameter from 'pValue' to 'pGroupName' to better describe its purpose in this class.
+Do $cinst.$inherited.$construct(pID,pGroupName)
+# Calculate value as pGroupName

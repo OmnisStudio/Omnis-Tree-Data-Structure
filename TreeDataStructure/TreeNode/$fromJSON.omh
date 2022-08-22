@@ -1,0 +1,17 @@
+Calculate id as pJSON.$getstring("id")
+Calculate iValue as pJSON.$getstring($cinst.cValueKey)
+
+Calculate lChildCount as pJSON.$getarraylength($cinst.cChildNodesKey)
+
+Calculate lChildJSON as $extobjects.OJSON.$objects.JSON.$newref()
+
+For i from 0 to lChildCount-1 step 1
+	Do lChildJSON.$setjson("",pJSON.$getjson(con($cinst.cChildNodesKey,".[",i,"]")))
+	Calculate lChildNodeType as lChildJSON.$getstring("nodeType")
+	Calculate lNodeLib as lChildJSON.$getstring("nodeLib")
+	
+	Calculate lChildNode as $libs.[lNodeLib].$objects.[lChildNodeType].$newref("","") ## Create a new child node of the specified type
+	Do lChildNode.$fromJSON(lChildJSON) ## Populate it from the given JSON
+	
+	Do $cinst.$appendChildNode(lChildNode)
+End For

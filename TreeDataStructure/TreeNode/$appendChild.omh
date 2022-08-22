@@ -1,0 +1,4 @@
+Calculate lNewNode as $objects.TreeNode.$newref(pChildID,pChildValue,$cinst.$objref)
+Do childNodes.$add(lNewNode)
+
+Quit method lNewNode

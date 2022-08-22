@@ -1,0 +1,7 @@
+Do inherited Returns lJSON
+
+# Extend the default behaviour to additionally add our custom price and quantity members:
+Do lJSON.$addmember("",cPriceKey,price)
+Do lJSON.$addmember("",cQuantityKey,quantity)
+
+Quit method lJSON

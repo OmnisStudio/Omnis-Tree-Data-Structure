@@ -1,0 +1,5 @@
+Do inherited
+
+# Also set the price & quantity iVars from the passed JSON
+Calculate price as pJSON.$getinteger(cPriceKey)
+Calculate quantity as pJSON.$getinteger(cQuantityKey)

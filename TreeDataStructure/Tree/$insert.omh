@@ -1,0 +1,9 @@
+Calculate lParentNode as $cinst.$depthFirstSearchByID(pParentNodeID)
+If isnull(lParentNode)
+	Quit method kFalse
+End If
+
+Calculate lNewNode as $objects.TreeNode.$newref(pID,pValue,lParentNode)
+Do lParentNode.$appendChildNode(lNewNode)
+
+Quit method lNewNode

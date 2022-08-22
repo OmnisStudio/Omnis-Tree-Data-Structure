@@ -1,0 +1,14 @@
+If pFromNode.id=pTargetID
+	Quit method pFromNode
+End If
+
+If pMaxDepth>0
+	For pFromNode.childNodes.$line from 1 to pFromNode.childNodes.$linecount step 1
+		Calculate lFoundNode as $cinst.$depthFirstSearchByID(pTargetID,pFromNode.childNodes.childNode,pMaxDepth-1)
+		If not(isnull(lFoundNode))
+			Quit method lFoundNode
+		End If
+	End For
+End If
+
+Quit method #NULL

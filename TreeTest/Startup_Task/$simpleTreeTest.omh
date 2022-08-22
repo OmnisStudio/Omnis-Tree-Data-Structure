@@ -1,0 +1,43 @@
+Do lTree.$insert("produce","Produce")
+Do lTree.$insert("fruit","Fruit","produce")
+Do lTree.$insert("veg","Vegetables","produce")
+
+Do lTree.$insert("apple","Apple","fruit")
+Do lTree.$insert("banana","Banana","fruit")
+Do lTree.$insert("pear","Pear","fruit")
+
+Do lTree.$insert("aubergine","Aubergine","veg")
+Do lTree.$insert("potato","Potato","veg")
+Do lTree.$insert("green_beans","Green Beans","veg")
+
+Do lTree.$toJSON() Returns lJSONText
+
+# Add some nodes by appending to a TreeNode directly:
+Do lTree.$breadthFirstSearchByID("fruit") Returns lNode
+
+Do lNode.$appendChild("grapes","Grapes")
+Do $libs.TreeDataStructure.$objects.TreeNode.$newref("orange","Orange") Returns lNewNode
+Do lNode.$appendChildNode(lNewNode)
+
+# Check breadthFirst search:
+Do lTree.$breadthFirstSearchByID("potato") Returns lNode
+Do $cinst.$assert(lNode.id="potato"&lNode.parent.id="veg","BreadthFirstSearch failed")
+
+# Check depthFirst search:
+Do lTree.$depthFirstSearchByID("potato") Returns lNode
+Do $cinst.$assert(lNode.id="potato"&lNode.parent.id="veg","DepthFirstSearch failed")
+
+# Check grapes and Oranges were added correctly:
+Do lTree.$depthFirstSearchByID("grapes") Returns lNode
+Do $cinst.$assert(lNode.id="grapes"&lNode.parent.id="fruit","Grapes was not added properly")
+
+Do lTree.$depthFirstSearchByID("orange") Returns lNode
+Do $cinst.$assert(lNode.id="orange"&lNode.parent.id="fruit","Orange was not added properly")
+
+# Check $remove():
+Do lTree.$removeNode("fruit")
+Do lTree.$depthFirstSearchByID("fruit") Returns lNode
+Do $cinst.$assert(isnull(lNode),"fruit node was not removed")
+
+Do lTree.$depthFirstSearchByID("orange") Returns lNode
+Do $cinst.$assert(isnull(lNode),"orange node is still accessible after removing fruit node")

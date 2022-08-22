@@ -1,0 +1,321 @@
+[
+	{
+		"name": "$construct",
+		"order": 1,
+		"pvardefs": [
+			{
+				"name": "pRootID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1,
+				"initval": "cDefaultRootNodeID"
+			},
+			{
+				"name": "pRootValue",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2,
+				"initval": "cDefaultRootNodeID"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$clear",
+		"order": 3,
+		"desc": "Clears all children, leaving only the root node.",
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$insert",
+		"order": 4,
+		"desc": "Insert a new TreeNode with id and value as passed, at the end of the children of the passed parentNode (or the root node if not specified).\r\rReturns the newly created Node.",
+		"notes": "It's much more efficient to use the Node's $appendChildNode method (if you have the parent Node available), as that doesn't need to search to find the parent Node.",
+		"pvardefs": [
+			{
+				"name": "pID",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pValue",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			},
+			{
+				"name": "pParentNodeID",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3,
+				"initval": "rootNode.id"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lNewNode",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lParentNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$removeNode",
+		"order": 5,
+		"desc": "Removes the Node with the specified ID.\r\rReturns the removed Node.",
+		"notes": "It's much more efficient to use the Node's $appendChildNode method (if you have the parent Node available), as that doesn't need to search to find the parent Node.",
+		"pvardefs": [
+			{
+				"name": "pID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lNode",
+				"order": 2,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$depthFirstSearchByID",
+		"order": 6,
+		"desc": "Searches through children, searching through full depth of each node before moving to the next level.\r\rGenerally faster for finding Nodes at deeper depths.\rSee https://en.wikipedia.org/wiki/Depth-first_search",
+		"pvardefs": [
+			{
+				"name": "pTargetID",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pFromNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 2,
+				"initval": "rootNode"
+			},
+			{
+				"name": "pMaxDepth",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 3,
+				"initval": "100000000"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lFoundNode",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$breadthFirstSearchByID",
+		"order": 7,
+		"desc": "Searches through children, searching through all nodes at each level before moving down to the next level.\r\rGenerally faster for finding Nodes closer to the starting point.\rSee https://en.wikipedia.org/wiki/Breadth-first_search",
+		"pvardefs": [
+			{
+				"name": "pTargetID",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pFromNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 2,
+				"initval": "rootNode"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lNode",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lQueue",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$toJSON",
+		"order": 8,
+		"desc": "Creates a JSON representation of the entire tree.",
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lTree",
+				"order": 1,
+				"type": "kObject",
+				"subtype": "Tree",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$fromJSON",
+		"order": 9,
+		"desc": "Populates the tree with data from the passed JSON text.\rThe JSON should be in the same format as is exported by calling $toJSON().",
+		"pvardefs": [
+			{
+				"name": "pJSONText",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pErrorText",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pCustomClassLib",
+				"order": 12,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 3,
+				"initval": "#NULL",
+				"desc": "If set, the library containing the calling class. Used to help find the lib containing the class specified by 'nodeType' in the JSON."
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "i",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lChildCount",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lChildJSON",
+				"order": 10,
+				"type": "kObjectref",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0
+			},
+			{
+				"name": "lChildNode",
+				"order": 9,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			},
+			{
+				"name": "lChildNodeType",
+				"order": 11,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lJSON",
+				"order": 2,
+				"type": "kObject",
+				"subtype": ".OJSON.JSON",
+				"sublen": 0
+			},
+			{
+				"name": "lRootID",
+				"order": 5,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "lRootMembers",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "lRootNode",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
+	}
+]

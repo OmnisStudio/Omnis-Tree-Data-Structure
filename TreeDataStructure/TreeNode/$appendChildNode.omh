@@ -1,0 +1,3 @@
+Calculate pChildNode.parent as $cinst.$objref
+Do childNodes.$add(pChildNode)
+Quit method pChildNode

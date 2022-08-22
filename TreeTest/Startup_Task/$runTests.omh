@@ -1,0 +1,10 @@
+Calculate iFailureCount as 0
+
+Do $cinst.$simpleTreeTest()
+Do $cinst.$customNodeClasses()
+
+If iFailureCount=0
+	OK message Success {All tests passed.}
+Else
+	OK message Failure {There were [iFailureCount] test failures.}
+End If

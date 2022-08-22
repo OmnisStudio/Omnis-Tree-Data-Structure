@@ -1,0 +1,4 @@
+Do $cinst.$depthFirstSearchByID(pID) Returns lNode
+Do lNode.parent.childNodes.$remove(lNode)
+
+Quit method lNode

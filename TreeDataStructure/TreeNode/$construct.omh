@@ -1,0 +1,7 @@
+Calculate id as pID
+# Breakpoint Next line sets iValue to NULL
+Calculate iValue as pValue
+Calculate parent as pParent
+
+Do childNodes.$define()
+Do childNodes.$cols.$add("childNode",kObjectref)
