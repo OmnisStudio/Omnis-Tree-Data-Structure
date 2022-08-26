@@ -18,6 +18,7 @@ To make use of this, you should use Omnis' **New Lib From JSON** option, under t
 The default implementation of Tree Nodes have only a single, Character, **'value'**. 
 For most situations, you will want your Nodes to hold more information than this, in which case you will want to ceate custom subclasses of TreeNode (As described shortly).
 
+The `TreeTest` folder is an Omnis library (import it as JSON), which shows examples of how this may be used.
 
 ## Adding Nodes
 
