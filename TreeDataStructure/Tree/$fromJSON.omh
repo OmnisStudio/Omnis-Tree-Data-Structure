@@ -10,17 +10,6 @@ End If
 Calculate lRootID as lJSON.$getstring("id")
 Do $cinst.$createRootNode(lRootID,lRootID)
 
-Calculate lChildCount as lJSON.$getarraylength("childNodes")
-
-Calculate lChildJSON as $extobjects.OJSON.$objects.JSON.$newref()
-
-For i from 0 to lChildCount-1 step 1
-	Do lChildJSON.$setjson("",lJSON.$getjson(con("childNodes.[",i,"]")))
-	Calculate lChildNodeType as lChildJSON.$getstring("nodeType")
-	Calculate lChildNode as $objects.[lChildNodeType].$newref("","")
-	Do lChildNode.$fromJSON(lChildJSON,$clib)
-	
-	Do rootNode.$appendChildNode(lChildNode)
-End For
+Do $cinst.rootNode.$fromJSON(lJSON)
 
 Quit method lJSON
