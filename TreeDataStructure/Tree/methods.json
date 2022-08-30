@@ -291,7 +291,7 @@
 			{
 				"name": "lJSON",
 				"order": 2,
-				"type": "kObject",
+				"type": "kObjectref",
 				"subtype": ".OJSON.JSON",
 				"sublen": 0
 			},

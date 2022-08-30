@@ -1,3 +1,4 @@
+Calculate lJSON as $extobjects.OJSON.$objects.JSON.$newref()
 Do lJSON.$setjson("",pJSONText)
 
 
@@ -21,3 +22,5 @@ For i from 0 to lChildCount-1 step 1
 	
 	Do rootNode.$appendChildNode(lChildNode)
 End For
+
+Quit method lJSON
