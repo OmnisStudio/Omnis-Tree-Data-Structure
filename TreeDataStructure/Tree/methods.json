@@ -317,5 +317,30 @@
 				"sublen": 0
 			}
 		]
+	},
+	{
+		"name": "$createRootNode",
+		"order": 10,
+		"pvardefs": [
+			{
+				"name": "pRootID",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 1
+			},
+			{
+				"name": "pRootValue",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

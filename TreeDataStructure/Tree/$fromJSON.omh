@@ -8,7 +8,7 @@ If not(lJSON.$hasmember("","id"))
 End If
 
 Calculate lRootID as lJSON.$getstring("id")
-Calculate rootNode as $objects.TreeNode.$newref(lRootID,lRootID)
+Do $cinst.$createRootNode(lRootID,lRootID)
 
 Calculate lChildCount as lJSON.$getarraylength("childNodes")
 

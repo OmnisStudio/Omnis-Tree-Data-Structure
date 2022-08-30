@@ -1,1 +1,1 @@
-Calculate rootNode as $objects.TreeNode.$newref(pRootID,pRootValue)
+Do $cinst.$createRootNode(pRootID,pRootValue)
