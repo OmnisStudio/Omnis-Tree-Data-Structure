@@ -1,1 +1,1 @@
-Do rootNode.childNodes.$clear()
+Do $cinst.rootNode.childNodes.$clear()

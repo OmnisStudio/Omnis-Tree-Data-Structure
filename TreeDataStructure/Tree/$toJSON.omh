@@ -1,1 +1,1 @@
-Quit method OJSON.$formatjson(rootNode.$toJSON().$getjson())
+Quit method OJSON.$formatjson($cinst.rootNode.$toJSON().$getjson())
