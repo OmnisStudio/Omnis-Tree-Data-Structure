@@ -76,7 +76,7 @@
 				"subtype": "kSimplechar",
 				"sublen": 100000000,
 				"param": 3,
-				"initval": "rootNode.id"
+				"initval": "$cinst.rootNode.id"
 			}
 		],
 		"lvardefs": [
@@ -141,7 +141,7 @@
 				"subtype": "TreeNode",
 				"sublen": 0,
 				"param": 2,
-				"initval": "rootNode"
+				"initval": "$cinst.rootNode"
 			},
 			{
 				"name": "pMaxDepth",
@@ -183,7 +183,7 @@
 				"subtype": "TreeNode",
 				"sublen": 0,
 				"param": 2,
-				"initval": "rootNode"
+				"initval": "$cinst.rootNode"
 			}
 		],
 		"lvardefs": [
