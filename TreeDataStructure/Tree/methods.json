@@ -342,5 +342,47 @@
 		"lvardefs": [
 
 		]
+	},
+	{
+		"name": "$getLeafNodeIDs",
+		"order": 11,
+		"pvardefs": [
+			{
+				"name": "pNodeList",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1,
+				"desc": "A list to populate with the IDs of all leaf Nodes under (and including) pFromNode"
+			},
+			{
+				"name": "pFromNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 2,
+				"initval": "$cinst.rootNode"
+			},
+			{
+				"name": "pMaxDepth",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 3,
+				"initval": "100000000"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lFoundNode",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
 	}
 ]

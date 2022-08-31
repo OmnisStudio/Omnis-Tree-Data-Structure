@@ -1,0 +1,15 @@
+If pNodeList.$colcount=0
+	Do pNodeList.$define()
+	Do pNodeList.$cols.$add("nodeID",kCharacter,kSimplechar)
+End If
+
+If pFromNode.$isLeaf()
+	Do pNodeList.$add(pFromNode.id)
+End If
+
+
+If pMaxDepth>0
+	For pFromNode.childNodes.$line from 1 to pFromNode.childNodes.$linecount step 1
+		Do $cinst.$getLeafNodeIDs(pNodeList,pFromNode.childNodes.childNode,pMaxDepth-1)
+	End For
+End If
