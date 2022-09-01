@@ -20,6 +20,9 @@ For most situations, you will want your Nodes to hold more information than this
 
 The `TreeTest` folder is an Omnis library (import it as JSON), which shows examples of how this may be used.
 
+Nodes can be quickly accessed by their ID.
+
+
 ## Adding Nodes
 
 There are multiple ways to add Nodes to the tree:
