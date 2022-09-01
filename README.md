@@ -88,7 +88,7 @@ See https://en.wikipedia.org/wiki/Breadth-first_search
 
 ## Saving & Restoring Trees
 
-Trees and TreeNodes have `$toJSON()` and `$fromJSON()` methods, to allow you to export a Tree to JSON, and rebuild the a Tree from such exported JSON.
+Trees and TreeNodes have `$toJSON()` and `$fromJSON()` methods, to allow you to export a Tree to JSON, and rebuild a Tree from such exported JSON.
 
 
 
@@ -147,4 +147,4 @@ Calculate quantity as pJSON.$getinteger(cQuantityKey)
 
 # Limitations
 The Tree implementation uses recursion for depth-first searches and JSON conversion, and so is subject to Omnis' stack memory limit. 
-Therefore, very 'deep' trees may hit a 'Stack Size Exceeded' error in Omnis when using tehse actions.
+Therefore, very 'deep' trees may hit a 'Stack Size Exceeded' error in Omnis when using these actions.
