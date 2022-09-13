@@ -8,9 +8,11 @@ Do lJSON.$addmember("",$cinst.cChildNodesKey,lEmptyArray)
 
 Do lEmptyObj.$define()
 
-For childNodes.$line from 1 to childNodes.$linecount step 1
-	Do lJSON.$push($cinst.cChildNodesKey,lEmptyObj)
-	Do lJSON.$setjson(con($cinst.cChildNodesKey,".[",childNodes.$line-1,"]"),childNodes.childNode.$toJSON().$getjson) Returns #F
-End For
+If pIncludeChildren
+	For childNodes.$line from 1 to childNodes.$linecount step 1
+		Do lJSON.$push($cinst.cChildNodesKey,lEmptyObj)
+		Do lJSON.$setjson(con($cinst.cChildNodesKey,".[",childNodes.$line-1,"]"),childNodes.childNode.$toJSON(kTrue).$getjson) Returns #F
+	End For
+End If
 
 Quit method lJSON
