@@ -196,5 +196,22 @@
 				"sublen": 100000000
 			}
 		]
+	},
+	{
+		"name": "$indexAmongSiblings",
+		"order": 8,
+		"desc": "Returns the (1-based) index of this Node amongst its parent Node's children.\r0 indicates an error (usually this Node has no parent, or is not referenced as a child in the parent Node)",
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "lIndex",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
 	}
 ]

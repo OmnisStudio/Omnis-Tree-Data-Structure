@@ -1,0 +1,21 @@
+Do $cinst.$breadthFirstSearchByID(pReplaceNodeID,pFromNode) Returns lOldNode
+
+If isnull(lOldNode)
+	Calculate lErrText as con("Unable to locate Node with ID '",pReplaceNodeID,"'")
+	Quit method kFalse
+End If
+
+Calculate pNewNode.parent as lOldNode.parent
+If pUseOldNodesChildren
+	Calculate pNewNode.childNodes as lOldNode.childNodes
+End If
+
+# Replace the reference to the node in the parent's list of children:
+Calculate lIndex as lOldNode.$indexAmongSiblings()
+If lIndex>0
+	Calculate pNewNode.parent.childNodes.[lIndex].childNode as pNewNode
+Else ## Node wasn't found in the parent, so let's append it to try to fix that
+	Do pNewNode.parent.childNodes.$add(pNewNode)
+End If
+
+Quit method kTrue

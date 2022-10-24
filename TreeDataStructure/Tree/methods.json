@@ -384,5 +384,74 @@
 				"sublen": 0
 			}
 		]
+	},
+	{
+		"name": "$replaceNode",
+		"order": 12,
+		"desc": "Replaces a Node in the Tree with a new Node, ignoring the new Node's children.\rThe old Node's children and parent are moved to the new Node.",
+		"pvardefs": [
+			{
+				"name": "pNewNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pUseOldNodesChildren",
+				"order": 7,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kTrue",
+				"desc": "If true, ignore the new Node's children and transplant the old Node's children over to it."
+			},
+			{
+				"name": "pReplaceNodeID",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000,
+				"param": 3,
+				"initval": "pNewNode.id",
+				"desc": "ID of  the node to replace. If omitted, use the ID of pNewNode."
+			},
+			{
+				"name": "pFromNode",
+				"order": 4,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 4,
+				"initval": "$cinst.rootNode",
+				"desc": "Node to search under. If ommitted, uses the root node of the tree."
+			},
+			{
+				"name": "lErrText",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lIndex",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "lOldNode",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0
+			}
+		]
 	}
 ]

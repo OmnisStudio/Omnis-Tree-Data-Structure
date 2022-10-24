@@ -1,0 +1,11 @@
+If isnull(parent)
+	Quit method 0 ## This Node has no parent
+End If
+
+For lIndex from 1 to parent.childNodes.$linecount step 1
+	If parent.childNodes.[lIndex].childNode=$cinst.$objref
+		Quit method lIndex
+	End If
+End For
+
+Quit method 0 ## Not found in the parent Node's children
