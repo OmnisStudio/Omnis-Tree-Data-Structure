@@ -213,5 +213,30 @@
 				"sublen": 0
 			}
 		]
+	},
+	{
+		"name": "$appendChildNodeAfter",
+		"order": 9,
+		"pvardefs": [
+			{
+				"name": "pChildNode",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "TreeNode",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pIndex",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
 	}
 ]

@@ -1,0 +1,7 @@
+Calculate pChildNode.parent as $cinst.$objref
+If pIndex=0
+	Do childNodes.$addbefore(1,pChildNode)
+Else
+	Do childNodes.$addafter(pIndex,pChildNode)
+End If
+Quit method pChildNode
