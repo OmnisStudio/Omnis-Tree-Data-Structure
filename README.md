@@ -64,6 +64,15 @@ Allows you to add a previously created TreeNode after the TreeNode's child with 
 ```
 
 
+### TreeNode's $appendChildNodeBefore() method:
+
+Allows you to add a previously created TreeNode before the TreeNode's child with the specified index. If the index is null, the node will be added to the end.
+```
+  Calculate lNewNode as $libs.TreeDataStructure.$objects.TreeNode.$newref("produce","All Produce")
+  Do lParentNode.$appendChildNodeAfter(lNewNode,2)
+```
+
+
 ## Searching Nodes
 
 The Tree exposes two ways to search for a particular node:
