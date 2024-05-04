@@ -12,6 +12,8 @@ To make use of this, you should use Omnis' **New Lib From JSON** option, under t
 
  - It is recommended that you keep this imported library as a separate library (and reference the objects in it from your library), so that you can eassily pull any updates from this repo.
 
+ - A JavaScript implementation following a similar pattern is provided, in the *"JS"* folder. This may be used if you need to operate on the tree on the client side of the JS Client (in which case you would convert to JSON when passing between client and server).
+
 
 # Usage
 
