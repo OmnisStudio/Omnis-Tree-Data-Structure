@@ -170,7 +170,7 @@ class Tree {
 	 * @return {TreeNode}									The matched node.
 	 */
 	find(callback, fromNode = this.rootNode) {
-		for (let node of this.breadthFirstIterator()) {
+		for (let node of this.breadthFirstIterator(fromNode)) {
 			if (callback(node))
 				return node;
 		}
