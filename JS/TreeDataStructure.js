@@ -125,6 +125,11 @@ class Tree {
 		// Re-add this node in the old Node's position in the parent's children:
 		newNode.parent.childNodes.splice(removal.index, 0, newNode);
 
+		// Update parent references of any child nodes to the new node:
+		for (const childNode of newNode.childNodes) {
+			childNode.parent = newNode;
+		}
+
 		return true;
 	}
 	
